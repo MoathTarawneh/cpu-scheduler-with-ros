@@ -27,6 +27,7 @@ How to Run
 ------------------------------------------------------------
 2) Build and Source the Workspace
 
+unzip the CPU_ROS.rar
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
