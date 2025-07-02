@@ -27,25 +27,27 @@ How to Run
 ------------------------------------------------------------
 2) Build and Source the Workspace
 
-unzip the CPU_ROS.rar
+unzip the CPU_ROS.rar then:
+<pre>
 cd ~/ros2_ws
 colcon build
 source install/setup.bash
+</pre>
 
 ------------------------------------------------------------
 3) Launch the Scheduler Node
-
-ros2 run <your_package> SchedulerNode.py --type FCFS
-
+<pre>
+ros2 run CPU_ROS SchedulerNode --type FCFS
+</pre>
 You can replace FCFS with RR or PRIORITY to use a different scheduling algorithm.
 
 ------------------------------------------------------------
 4) Launch Process Nodes (each in a new terminal)
-
-ros2 run <your_package> ProcessNode.py Proc_1 13 --priority 1
-ros2 run <your_package> ProcessNode.py Proc_2 7 --priority 2
-ros2 run <your_package> ProcessNode.py Proc_3 5 --priority 3
-
+<pre>
+ros2 run CPU_ROS ProcessNode Proc_1 13 --priority 1
+ros2 run CPU_ROS ProcessNode Proc_2 7 --priority 2
+ros2 run CPU_ROS ProcessNode Proc_3 5 --priority 3
+</pre>
 ------------------------------------------------------------
 Features
 
@@ -60,7 +62,6 @@ Example Output
 
 SchedulerNode:
 <pre>
-  
 moath@MOATH:~/ros2_ws$ ros2 run CPU_ROS SchedulerNode --type FCFS
 Starting Scheduler Node with scheduling type: FCFS
 [INFO] [1751453752.970312000] [scheduler_node]: 
@@ -137,16 +138,14 @@ Starting Scheduler Node with scheduling type: FCFS
 [STATUS] CPU Idle
 [STATUS] Queue: []
 --------------------------------------------------
-
 </pre>
+
 ProcessNode:
 <pre>
-
 moath@MOATH:~/ros2_ws$ ros2 run CPU_ROS ProcessNode Proc_1 13 --priority 1
 [INFO] [1751453758.668531900] [process_Proc_1]: Sending process request for Proc_1
 [INFO] [1751453758.673219900] [process_Proc_1]: Received ACK for Proc_1
 [INFO] [1751453758.921185500] [process_Proc_1]: Process Proc_1 started with time slice 1s. Remaining=13.0s
 [INFO] [1751453771.923339100] [process_Proc_1]: Received FINISHED for Proc_1. Shutting down.
 moath@MOATH:~/ros2_ws$ 
-
 </pre>
