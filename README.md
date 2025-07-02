@@ -58,7 +58,8 @@ Features
 Example Output
 
 SchedulerNode:
-
+<pre>
+  
 moath@MOATH:~/ros2_ws$ ros2 run CPU_ROS SchedulerNode --type FCFS
 Starting Scheduler Node with scheduling type: FCFS
 [INFO] [1751453752.970312000] [scheduler_node]: 
@@ -136,7 +137,9 @@ Starting Scheduler Node with scheduling type: FCFS
 [STATUS] Queue: []
 --------------------------------------------------
 
+</pre>
 ProcessNode:
+<pre>
 
 moath@MOATH:~/ros2_ws$ ros2 run CPU_ROS ProcessNode Proc_1 13 --priority 1
 [INFO] [1751453758.668531900] [process_Proc_1]: Sending process request for Proc_1
@@ -144,3 +147,5 @@ moath@MOATH:~/ros2_ws$ ros2 run CPU_ROS ProcessNode Proc_1 13 --priority 1
 [INFO] [1751453758.921185500] [process_Proc_1]: Process Proc_1 started with time slice 1s. Remaining=13.0s
 [INFO] [1751453771.923339100] [process_Proc_1]: Received FINISHED for Proc_1. Shutting down.
 moath@MOATH:~/ros2_ws$ 
+
+</pre>
